@@ -4,6 +4,7 @@ import * as day01 from "../src/01";
 it.each([
   [0, 0, "thehungryturnip", day00.user],
   [1, 1, 53386, day01.sum],
+  [1, 2, 53312, day01.textSum],
 ])(
   "For day %p part %p. Expect %p.",
   (
