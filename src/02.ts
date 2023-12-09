@@ -51,10 +51,34 @@ const isValidGame = (game: Game): boolean =>
     )
     .reduce((acc, subset) => acc && subset, true);
 
+const calcMinPower = (game: Game): number => {
+  const minSubset = game.subsets.reduce(
+    (minset, subset) => ({
+      red: Math.max(minset.red, subset.red),
+      green: Math.max(minset.green, subset.green),
+      blue: Math.max(minset.blue, subset.blue),
+    }),
+    {
+      red: 0,
+      green: 0,
+      blue: 0,
+    },
+  );
+
+  return minSubset.red * minSubset.green * minSubset.blue;
+};
+
 const games = readGameData();
 export const validGameIdSum = games
   .filter((game) => isValidGame(game))
   .reduce((total, game) => total + game.id, 0);
 console.log(
   `Day 02 Part 1: The sum of the IDs for the valid games is: ${validGameIdSum}`,
+);
+
+export const minGamePowerSum = games
+  .map((game) => calcMinPower(game))
+  .reduce((total, power) => total + power);
+console.log(
+  `Day 02 part 2: The sum of the minimum power for each game is: ${minGamePowerSum}`,
 );

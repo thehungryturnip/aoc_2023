@@ -7,6 +7,7 @@ it.each([
   [1, 1, 53386, day01.sum],
   [1, 2, 53312, day01.textSum],
   [2, 1, 2369, day02.validGameIdSum],
+  [2, 2, 66363, day02.minGamePowerSum],
 ])(
   "For day %p part %p. Expect %p.",
   (
