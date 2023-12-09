@@ -14,12 +14,12 @@ const DIGIT_TEXTS = {
   nine: 9,
 };
 
-const getValue = (line: string) => {
+const getValue = (line: string): number => {
   const digits = line.split("").filter((char) => DIGITS.includes(char));
   return +digits[0] * 10 + +digits[digits.length - 1];
 };
 
-const getFirstDigit = (line: string) => {
+const getFirstDigit = (line: string): number => {
   for (let i = 0; i < line.length; i++) {
     if (DIGITS.includes(line[i])) {
       return +line[i];
@@ -35,7 +35,7 @@ const getFirstDigit = (line: string) => {
   return 0;
 };
 
-const getLastDigit = (line: string) => {
+const getLastDigit = (line: string): number => {
   for (let i = line.length - 1; i >= 0; i--) {
     if (DIGITS.includes(line[i])) {
       return +line[i];
@@ -51,7 +51,7 @@ const getLastDigit = (line: string) => {
   return 0;
 };
 
-const getTextValue = (line: string) =>
+const getTextValue = (line: string): number =>
   getFirstDigit(line) * 10 + getLastDigit(line);
 
 const data = utils.readFile(1);
