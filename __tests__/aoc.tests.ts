@@ -10,6 +10,7 @@ it.each([
   [2, 1, 2369, day02.validGameIdSum],
   [2, 2, 66363, day02.minGamePowerSum],
   [3, 1, 535235, day03.partsSum],
+  [3, 2, 79844424, day03.gearRatioSum],
 ])(
   "For day %p part %p. Expect %p.",
   (
