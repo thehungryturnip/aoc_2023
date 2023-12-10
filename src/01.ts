@@ -1,6 +1,5 @@
 import * as utils from "./lib/utils";
 
-const DIGITS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const DIGIT_TEXTS = {
   zero: 0,
   one: 1,
@@ -15,13 +14,13 @@ const DIGIT_TEXTS = {
 };
 
 const getValue = (line: string): number => {
-  const digits = line.split("").filter((char) => DIGITS.includes(char));
+  const digits = line.split("").filter((char) => utils.isDigit(char));
   return +digits[0] * 10 + +digits[digits.length - 1];
 };
 
 const getFirstDigit = (line: string): number => {
   for (let i = 0; i < line.length; i++) {
-    if (DIGITS.includes(line[i])) {
+    if (utils.isDigit(line[i])) {
       return +line[i];
     }
 
@@ -37,7 +36,7 @@ const getFirstDigit = (line: string): number => {
 
 const getLastDigit = (line: string): number => {
   for (let i = line.length - 1; i >= 0; i--) {
-    if (DIGITS.includes(line[i])) {
+    if (utils.isDigit(line[i])) {
       return +line[i];
     }
 
