@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "exec": "ts-node",
+    "fix": "prettier --write .",
     "test": "prettier --check . && eslint . && jest",
     "prepare": "husky install"
   },
