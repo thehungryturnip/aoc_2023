@@ -34,7 +34,7 @@ const lineToCard = (line: string): Card => {
   };
 };
 
-const tallyCards = (cardScores: CardScore[]) => {
+const tallyCards = (cardScores: CardScore[]): number[] => {
   const tally = Array(cardScores.length).fill(1);
 
   cardScores.forEach((cardScore) => {
